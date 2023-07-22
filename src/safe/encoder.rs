@@ -53,6 +53,8 @@ pub struct Encoder {
     _device: Device,
 }
 
+unsafe impl Send for Encoder {}
+
 /// The client must flush the encoder before freeing any resources.
 /// Do this by sending an EOS encode frame.
 /// (This is also done automatically when [`Session`] is dropped.).
